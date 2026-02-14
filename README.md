@@ -1,8 +1,6 @@
 # chatgpt-history-exporter
 A Python tool to split ChatGPT conversation history into period-based Markdown files (daily, weekly, biweekly, monthly), optimized for use with Obsidian.
 
-# chatgpt-history-exporter
-
 A Python script that converts ChatGPT `conversations.json` into period-based Markdown files.
 
 This tool is optimized for reading large ChatGPT histories in **Obsidian** without freezing during indexing.
