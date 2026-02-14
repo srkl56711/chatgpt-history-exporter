@@ -36,4 +36,53 @@ Install required packages:
 
 ```bash
 python -m pip install tzdata ijson
+```
+## 🧪 Example Usage
+**Daily files**
+```bash
+python chatgpt_json_to_period_md.py conversations.json out_md --split daily --tz Asia/Tokyo
+```
+**Monthly files**
+```bash
+python chatgpt_json_to_period_md.py conversations.json out_md --split daily --tz Asia/Tokyo
+```
+**Weekly files starting Monday**
+```bash
+python chatgpt_json_to_period_md.py conversations.json out_md --split weekly --week-start mon --tz Asia/Tokyo
+```
+**Biweekly files starting Sunday**
+```bash
+python chatgpt_json_to_period_md.py conversations.json out_md --split biweekly --week-start sun --tz Asia/Tokyo
+```
+**Daily files grouped into month folders**
+```bash
+python chatgpt_json_to_period_md.py conversations.json out_md --split daily --group-by-month --tz Asia/Tokyo
+```
+**Weekly files grouped by month folders**
+```bash
+python chatgpt_json_to_period_md.py conversations.json out_md --split weekly --group-by-month --week-start mon --tz Asia/Tokyo
+```
+**Biweekly files grouped by month folders**
+```bash
+python chatgpt_json_to_period_md.py conversations.json out_md --split biweekly --week-start sun --group-by-month --tz Asia/Tokyo
+```
+## 📂 Example Output Structure
+Without --group-by-month:
+```yaml
+out_md/
+├── 2026-02-01.md
+├── 2026-02-08.md
+└── 2026-02-15.md
+```
+
+With --group-by-month:
+```yaml
+out_md/
+└── 2026-02/
+    ├── 2026-02-01.md
+    ├── 2026-02-08.md
+    └── 2026-02-15.md
+```
+## 📜 License
+MIT License
 
