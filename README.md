@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 # chatgpt-history-exporter
 
 A Python tool that converts ChatGPT `conversations.json`
@@ -37,6 +40,36 @@ Install required packages:
 ```bash
 python -m pip install tzdata ijson
 ```
+## 🚀 Quick Start
+
+```bash
+python -m pip install tzdata ijson
+python chatgpt_json_to_period_md.py conversations.json out_md --split weekly --tz Asia/Tokyo
+```
+## 📦 Usage
+
+```bash
+python chatgpt_json_to_period_md.py [-h]
+    [--split {daily,weekly,biweekly,monthly}]
+    [--group-by-month]
+    [--week-start {mon,sun}]
+    [--tz TZ]
+    input_json out_dir
+```
+### Positional Arguments
+| Argument   | Description                  |
+| ---------- | ---------------------------- |
+| input_json | Path to `conversations.json` |
+| out_dir    | Output directory             |
+
+### Options
+| Option             | Description                                                 |
+| ------------------ | ----------------------------------------------------------- |
+| `--split`          | How to split output files                                   |
+| `--group-by-month` | Place output files into `out_dir/YYYY-MM/` folders          |
+| `--week-start`     | Week start day for weekly/biweekly buckets (`mon` or `sun`) |
+| `--tz`             | Timezone name (e.g. `UTC`, `Asia/Tokyo`)                    |
+
 ## 🧪 Example Usage
 **Daily files**
 ```bash
